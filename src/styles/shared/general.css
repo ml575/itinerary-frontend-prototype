@@ -1,0 +1,441 @@
+body {
+  background-color:rgb(242, 242, 245);
+  font-family: Quicksand, Arial;
+  color: rgb(235, 235, 235);
+  margin: 0px 0px 0px 0px;
+  /* background-attachment: fixed; */
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+button {
+  font-family: Quicksand, Arial;
+  border-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  cursor: pointer
+}
+
+.tropical {
+  background-image: url("../../images/beach.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.main-header {
+  /* background-color: rgba(54, 148, 135, 0.39);
+  color: black; */
+  /* height: 7vh; */
+  /* min-height: 80px; */
+  height: 85px;
+  min-height: 85px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  /* position: fixed; */
+  /* background-color: rgba(207, 170, 170, 0.199); */
+}
+
+.logo {
+    font-family: Playwrite AR;
+    font-size: 35px;
+    width: 180px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-elements {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin-right: 12px;
+    column-gap: 0px;
+    justify-content: end;
+    /* padding-top: 12px; */
+}
+
+.navbar-button {
+  height: 100%;
+  font-size: 25px;
+  font-weight: 350px;
+  background-color: transparent;
+  color: rgb(235, 235, 235);
+  /* color:rgb(235, 235, 235); */
+  border-radius: 2px;
+  padding-left: 20.5px;
+  padding-right: 20.5px;
+}
+
+.navbar-button:hover {
+  background-color: rgb(235, 235, 235);
+  color: black;
+  font-weight: 500px;
+}
+
+.page-header {
+  /* height: 30vh; */
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* margin-top: max(70px, 7vh); */
+}
+
+.page-tagline {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 55px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-description {
+  font-size: 27px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.page-title-grid {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+.page-title {
+  width: 100%;
+  border-radius: 8px;
+  /* box-shadow: 5px 5px 100px rgba(168, 167, 167, 0.25); */
+  background-color: rgb(242, 242, 245);
+  font-size: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin-top: -65px;
+  margin-bottom: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  z-index: 1;
+}
+
+.page-title-solo {
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 100px rgba(168, 167, 167, 0.25);
+  background-color: rgb(242, 242, 245);
+  font-size: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin-top: -45px;
+  margin-bottom: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  z-index: 1;
+}
+
+.unselected-tab {
+  color: rgb(62, 62, 72);
+  box-shadow: 5px 0px 500px rgba(168, 167, 167, 0.25);
+  background-color: rgb(182, 182, 197);
+  font-size: 32px;
+  transition: background-color 0.3s;
+}
+
+.unselected-tab:hover {
+  background-color: rgb(169, 169, 184);
+  cursor: pointer
+}
+
+.page-content {
+  background-color:rgb(242, 242, 245);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.37);
+  position: fixed;
+  z-index: 2;
+}
+
+.overlay-page {
+  width: 90%;
+  background-color: gray;
+  position: absolute;
+  z-index: 3;
+  padding-bottom: 10px;
+  margin-top: 5vh;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.overlay-title {
+  font-size: 35px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.overlay-body {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.overlay-section, .overlay-section-half, .overlay-section-short {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.section-name {
+  margin-bottom: 20px;
+}
+
+.overlay-section-half {
+  width: 48%;
+  justify-content: start;
+}
+
+.overlay-section-short {
+  margin-top: 25px;
+}
+
+.overlay-section-cost {
+  width: 18%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.overlay-section-costsplit {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.overlay-section-title {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.overlay-section-half-title {
+  margin-right: 20px;
+}
+
+.overlay-section-costsplit-title {
+  margin-right: 5px;
+}
+
+.overlay-section-short-title {
+  font-size: 23px;
+}
+
+/* Only for this width, need to add media queries */
+.overlay-section-daterange {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlay-section-daterange-to {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.overlay-section-grid {
+  width: 86%;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  justify-content: end;
+  row-gap: 15px;
+  column-gap: 30px;
+}
+
+.overlay-input, .overlay-grid-input {
+  min-width: 20px;
+  height: 20px;
+  font-family: Quicksand, Arial;
+  font-size: 20px;
+  padding: 13px;
+}
+
+.overlay-input {
+  flex: 2;
+}
+
+.overlay-input-date {
+  min-width: 10px;
+  flex: 1;
+  height: 20px;
+  font-family: Quicksand, Arial;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.overlay-input-date-event {
+  min-width: 10px;
+  flex: 1;
+  height: 20px;
+  font-family: Quicksand, Arial;
+  font-size: 20px;
+  padding: 15px;
+  margin-right: 40px;
+}
+
+.overlay-input-checkbox {
+  min-width: 20px;
+  width: 20%;
+  height: 20px;
+  font-family: Quicksand, Arial;
+  font-size: 20px;
+  padding: 15px;
+  margin: 0px;
+}
+
+.overlay-input-select {
+  flex: 2;
+  min-width: 20px;
+  height: 50px;
+  font-family: Quicksand, Arial;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.overlay-grid-people {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlay-grid-payer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.overlay-payer-name {
+  width: 65%;
+  min-width: 20px;
+  height: 20px;
+  font-family: Quicksand, Arial;
+  font-size: 20px;
+  padding: 13px;
+}
+
+.overlay-payment {
+  width: 30%;
+  min-width: 20px;
+  height: 20px;
+  font-family: Quicksand, Arial;
+  font-size: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 3px;
+  margin-left: 3px;
+}
+
+.pay-or-not {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pay-or-not-text {
+  margin-top: -5px;
+  margin-bottom: 3px;
+}
+
+.overlay-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.overlay-cancel, .overlay-next, .overlay-confirm, .overlay-create {
+  font-size: 22px;
+  border-radius: 2px;
+  padding-top: 8px;
+  padding-right: 17px;
+  padding-bottom: 8px;
+  padding-left: 17px;
+  margin-left: 25px;
+}
+
+.overlay-cancel:hover, .overlay-next:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.overlay-confirm, .overlay-create {
+  background-color: lightcoral;
+}
+
+.overlay-confirm:hover, .overlay-create:hover {
+	background-color: rgb(210, 123, 123);
+}
+
+/* .overlay {
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+} */
+
+/* @-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+} */

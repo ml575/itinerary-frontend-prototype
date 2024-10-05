@@ -1,0 +1,311 @@
+.trip-name {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 55px;
+  margin-bottom: 10px;
+}
+
+.trip-date {
+	font-size: 27px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 5px;
+  }
+
+.trip-people {
+	font-size: 24px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.details-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media (max-width: 960px) {
+	.trip-actions {
+		display: grid;
+		grid-template-columns: 55vw;
+		justify-content: center;
+		row-gap: 25px;
+		column-gap: 40px;
+		margin-top: 35px;
+		margin-bottom: 35px;
+	}
+}
+
+@media (min-width: 960px) {
+	.trip-actions {
+		display: grid;
+		grid-template-columns: 25vw 25vw 25vw;
+		justify-content: center;
+		row-gap: 25px;
+		column-gap: 50px;
+		margin-top: 35px;
+		margin-bottom: 35px;
+	}
+}
+
+.action-option {
+	background-color: lightcoral;
+	color: black;
+	font-size: 30px;
+	border-radius: 2px;
+	text-align: center;
+	padding: 10px 15px 10px 15px;
+}
+
+.action-option:hover {
+	background-color: rgb(210, 123, 123);
+  }
+
+.no-events {
+	width: 50vw;
+	font-size: 32px;
+	margin-top: 30px;
+	margin-bottom: 70px;
+	margin-left: 20px;
+}
+
+.no-graph, .no-debts {
+	width: 50vw;
+	font-size: 22px;
+	margin-top: 50px;
+	margin-bottom: 70px;
+	margin-left: 20px;
+}
+
+.no-debts {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.day-list {
+	display: grid;
+	grid-template-columns: 85vw;
+	margin-bottom: 80px;
+}
+
+.debts-list {
+	display: grid;
+	grid-template-columns: 50vw 50vw;
+	margin-bottom: 80px;
+}
+
+.day-wrapper, .debtor-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.day-wrapper[open] .triangle-right-icon, .debtor-wrapper[open] .triangle-right-icon {
+	transform: rotate(90deg);
+}
+
+.day-header, .debtor-header {
+	font-size: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.debtor-header {
+	font-size: 32px;
+	padding-left: 70px;
+}
+
+.event-list, .receiver-list {
+	display: grid;
+	grid-template-columns: 85vw;
+	justify-content: center;
+}
+
+.receiver-list {
+	grid-template-columns: 85%;
+}
+
+.event-info, .receiver-info {
+	background-color: lightgray;
+	font-size: 25px;
+	margin-top: 2px;
+	margin-bottom: 1px;
+}
+
+.receiver-info {
+	font-size: 27px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* .event-info[open] .basic-event-info {
+  background-color: rgb(180, 180, 180);
+} */
+
+.basic-event-info, .event-money, .event-type, .event-people, .event-payers, .receiver-info {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.basic-event-info {
+	cursor: pointer;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	transition: background-color 0.3s;
+}
+
+.basic-event-info:hover {
+	background-color: rgb(180, 180, 180);
+}
+
+.event-name, .event-cost {
+	flex: 3;
+	margin-left: 75px;
+}
+
+.event-time, .event-costsplitting {
+	flex: 2;
+	margin-right: 60px;
+	margin-left: 60px;
+}
+
+.expand-collapse-icon, .event-spacing {
+	width: 15px;
+	margin-right: 50px;
+	margin-left: 50px;
+}
+
+.expanded-event-info {
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+.event-money, .event-type {
+	margin-bottom: 25px;
+}
+
+.event-type {
+	margin-left: 75px;
+}
+
+.event-people, .event-payers {
+	line-height: 1.5;
+	align-items: start;
+	margin-right: 100px;
+	margin-bottom: 15px;
+}
+
+.identifying-question {
+	margin-left: 75px;
+	margin-right: 7px;
+}
+
+.expanded-event-options {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	column-gap: 17%;
+	margin-top: 20px;
+	margin-right: 22%;
+	margin-left: 22%;
+}
+
+.edit-event-button, .remove-event-button {
+	background-color: lightcoral;
+	font-size: 22px;
+	border-radius: 2px;
+	padding-top: 2px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+}
+
+.edit-event-button:hover, .remove-event-button:hover {
+	background-color: rgb(210, 123, 123);
+  }
+
+.remove-event {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.triangle-right-icon {
+	width: 11px;
+	margin-right: 15px;
+}
+
+.expenses-graph-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.expenses-graph-title {
+	font-size: 32px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+.graph-and-legend {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.graph {
+	flex: 4;
+}
+
+.legend {
+	flex: 1;
+	margin-bottom: 70px;
+}
+
+.myRect {
+	transition: opacity 0.3s;
+}
+
+.costsplitting-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.debts-title {
+	font-size: 38px;
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 40px;
+}
+
+.receiver-name {
+	margin-left: 50px;
+	margin-right: 10px;
+}
+
+/* .triangle-down-icon {
+	width: 14px;
+	margin-right: 15px;
+	position: absolute;
+	margin-bottom: -3px;
+	margin-left: -3px;
+} */
+
+/* .hamburger-menu {
+	width: 15px;
+	margin-right: 50px;
+	margin-left: 50px;
+} */
