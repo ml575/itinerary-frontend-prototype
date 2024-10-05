@@ -8,26 +8,27 @@ function loadTrips() {
   trips = JSON.parse(localStorage.getItem("trips"));
 
   if (!trips) {
-    trips = [
-      {
-        title: "Trip 1 title that is really long",
-        startDate: "2025-01-02",
-        endDate: "2025-01-12",
-        id: "0"
-      }, 
-      {
-        title: "Trip 2 Is Long",
-        startDate: "2025-01-02",
-        endDate: "2025-01-12",
-        id: "1"
-      }, 
-      {
-        title: "Sydney, Australia",
-        startDate: "2025-01-02",
-        endDate: "2025-01-12",
-        id: "2"
-      }
-    ]
+    trips = [];
+    // trips = [
+    //   {
+    //     title: "Trip 1 title that is really long",
+    //     startDate: "2025-01-02",
+    //     endDate: "2025-01-12",
+    //     id: "0"
+    //   }, 
+    //   {
+    //     title: "Trip 2 Is Long",
+    //     startDate: "2025-01-02",
+    //     endDate: "2025-01-12",
+    //     id: "1"
+    //   }, 
+    //   {
+    //     title: "Sydney, Australia",
+    //     startDate: "2025-01-02",
+    //     endDate: "2025-01-12",
+    //     id: "2"
+    //   }
+    // ]
   }
 }
 
@@ -35,7 +36,7 @@ function loadId() {
   id = JSON.parse(localStorage.getItem("id"));
 
   if (!id) {
-    id = 3;
+    id = 0;
   }
 }
 

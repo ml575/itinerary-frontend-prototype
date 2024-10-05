@@ -6,314 +6,315 @@ function loadDayList() {
   dayList = JSON.parse(localStorage.getItem("dayList"));
 
   if (!dayList) {
-    dayList = {
-      "2025-01-02": [
-        {
-          numPeople: 7,
-          name: "Uber to lunch",
-          date: "2025-01-02",
-          startTime: "12:57",
-          endTime: "13:40",
-          // Below are in expanded details
-          cost: 70,
-          costSplitting: true,
-          type: "Transportation",
-          people: [
-            "Person 1",
-            "Person 2",
-            "Person 3",
-            "Person 4",
-            "Person 5",
-            "Person 6",
-            "Person 7"
-          ],
-          paid: [
-            false,
-            false,
-            true,
-            false,
-            false,
-            false,
-            true
-          ],
-          payments: [
-            0,
-            0,
-            50,
-            0,
-            0,
-            0,
-            20
-          ],
-          id: String(Math.floor(Math.random() * 1000000000000000))
-        },
-        {
-          numPeople: 4,
-          name: "Had lunch",
-          date: "2025-01-02",
-          startTime: "07:00",
-          endTime: "10:00",
-          cost: 80,
-          costSplitting: true,
-          type: "Food",
-          people: [
-            "Person 1",
-            "Person 2",
-            "Person 3",
-            "Person 4"
-          ],
-          paid: [
-            false,
-            false,
-            true,
-            true
-          ],
-          payments: [
-            0,
-            0,
-            50,
-            30
-          ],
-          id: String(Math.floor(Math.random() * 1000000000000000))
-        },
-        {
-          numPeople: 7,
-          name: "Universal booth games",
-          date: "2024-12-29",
-          startTime: "03:45",
-          endTime: "04:10",
-          // Below are in expanded details
-          cost: 56,
-          costSplitting: true,
-          type: "Activity",
-          people: [
-            "Person 1",
-            "Person 2",
-            "Person 3",
-            "Person 4",
-            "Person 5",
-            "Person 6",
-            "Person 7"
-          ],
-          paid: [
-            false,
-            true,
-            false,
-            true,
-            true,
-            false,
-            false
-          ],
-          payments: [
-            0,
-            36,
-            0,
-            10,
-            10,
-            0,
-            0
-          ],
-          id: String(Math.floor(Math.random() * 1000000000000000))
-        },
-        {
-          numPeople: 7,
-          name: "2nd Airbnb",
-          date: "2024-12-29",
-          startTime: "19:45",
-          endTime: "20:00",
-          // Below are in expanded details
-          cost: 70,
-          costSplitting: true,
-          type: "Hotel/Lodging",
-          people: [
-            "Person 1",
-            "Person 2",
-            "Person 3",
-            "Person 4",
-            "Person 5",
-            "Person 6",
-            "Person 7"
-          ],
-          paid: [
-            false,
-            false,
-            true,
-            false,
-            false,
-            false,
-            true
-          ],
-          payments: [
-            0,
-            0,
-            50,
-            0,
-            0,
-            0,
-            20
-          ],
-          id: String(Math.floor(Math.random() * 1000000000000000))
-        }
-      ],
-      "2024-12-29": [
-        {
-          numPeople: 7,
-          name: "Went to park and skated",
-          date: "2024-12-29",
-          startTime: "00:45",
-          endTime: "03:00",
-          // Below are in expanded details
-          cost: 70,
-          costSplitting: true,
-          type: "Activity",
-          people: [
-            "Person 1",
-            "Person 2",
-            "Person 3",
-            "Person 4",
-            "Person 5",
-            "Person 6",
-            "Person 7"
-          ],
-          paid: [
-            false,
-            false,
-            true,
-            false,
-            false,
-            false,
-            true
-          ],
-          payments: [
-            0,
-            0,
-            50,
-            0,
-            0,
-            0,
-            20
-          ],
-          id: String(Math.floor(Math.random() * 1000000000000000))
-        },
-        {
-          numPeople: 7,
-          name: "1st Airbnb",
-          date: "2024-12-29",
-          startTime: "05:45",
-          endTime: "07:00",
-          // Below are in expanded details
-          cost: 84,
-          costSplitting: true,
-          type: "Hotel/Lodging",
-          people: [
-            "Person 1",
-            "Person 2",
-            "Person 3",
-            "Person 4",
-            "Person 5",
-            "Person 6",
-            "Person 7"
-          ],
-          paid: [
-            true,
-            false,
-            true,
-            false,
-            false,
-            false,
-            true
-          ],
-          payments: [
-            14,
-            0,
-            50,
-            0,
-            0,
-            0,
-            20
-          ],
-          id: String(Math.floor(Math.random() * 1000000000000000))
-        },
-        {
-          numPeople: 7,
-          name: "Breakfast",
-          date: "2024-12-29",
-          startTime: "08:45",
-          endTime: "10:00",
-          // Below are in expanded details
-          cost: 35,
-          costSplitting: true,
-          type: "Food",
-          people: [
-            "Person 1",
-            "Person 2",
-            "Person 3",
-            "Person 4",
-            "Person 5",
-            "Person 6",
-            "Person 7"
-          ],
-          paid: [
-            false,
-            false,
-            false,
-            false,
-            false,
-            true,
-            false
-          ],
-          payments: [
-            0,
-            0,
-            0,
-            0,
-            0,
-            35,
-            0
-          ],
-          id: String(Math.floor(Math.random() * 1000000000000000))
-        },
-        {
-          numPeople: 7,
-          name: "Uber to universal",
-          date: "2024-12-29",
-          startTime: "10:30",
-          endTime: "11:00",
-          // Below are in expanded details
-          cost: 35,
-          costSplitting: true,
-          type: "Transportation",
-          people: [
-            "Person 1",
-            "Person 2",
-            "Person 3",
-            "Person 4",
-            "Person 5",
-            "Person 6",
-            "Person 7"
-          ],
-          paid: [
-            false,
-            true,
-            true,
-            false,
-            false,
-            false,
-            true
-          ],
-          payments: [
-            0,
-            5,
-            10,
-            0,
-            0,
-            0,
-            20
-          ],
-          id: String(Math.floor(Math.random() * 1000000000000000))
-        }
-      ]
-    };
+    dayList = {}
+    // dayList = {
+    //   "2025-01-02": [
+    //     {
+    //       numPeople: 7,
+    //       name: "Uber to lunch",
+    //       date: "2025-01-02",
+    //       startTime: "12:57",
+    //       endTime: "13:40",
+    //       // Below are in expanded details
+    //       cost: 70,
+    //       costSplitting: true,
+    //       type: "Transportation",
+    //       people: [
+    //         "Person 1",
+    //         "Person 2",
+    //         "Person 3",
+    //         "Person 4",
+    //         "Person 5",
+    //         "Person 6",
+    //         "Person 7"
+    //       ],
+    //       paid: [
+    //         false,
+    //         false,
+    //         true,
+    //         false,
+    //         false,
+    //         false,
+    //         true
+    //       ],
+    //       payments: [
+    //         0,
+    //         0,
+    //         50,
+    //         0,
+    //         0,
+    //         0,
+    //         20
+    //       ],
+    //       id: String(Math.floor(Math.random() * 1000000000000000))
+    //     },
+    //     {
+    //       numPeople: 4,
+    //       name: "Had lunch",
+    //       date: "2025-01-02",
+    //       startTime: "07:00",
+    //       endTime: "10:00",
+    //       cost: 80,
+    //       costSplitting: true,
+    //       type: "Food",
+    //       people: [
+    //         "Person 1",
+    //         "Person 2",
+    //         "Person 3",
+    //         "Person 4"
+    //       ],
+    //       paid: [
+    //         false,
+    //         false,
+    //         true,
+    //         true
+    //       ],
+    //       payments: [
+    //         0,
+    //         0,
+    //         50,
+    //         30
+    //       ],
+    //       id: String(Math.floor(Math.random() * 1000000000000000))
+    //     },
+    //     {
+    //       numPeople: 7,
+    //       name: "Universal booth games",
+    //       date: "2024-12-29",
+    //       startTime: "03:45",
+    //       endTime: "04:10",
+    //       // Below are in expanded details
+    //       cost: 56,
+    //       costSplitting: true,
+    //       type: "Activity",
+    //       people: [
+    //         "Person 1",
+    //         "Person 2",
+    //         "Person 3",
+    //         "Person 4",
+    //         "Person 5",
+    //         "Person 6",
+    //         "Person 7"
+    //       ],
+    //       paid: [
+    //         false,
+    //         true,
+    //         false,
+    //         true,
+    //         true,
+    //         false,
+    //         false
+    //       ],
+    //       payments: [
+    //         0,
+    //         36,
+    //         0,
+    //         10,
+    //         10,
+    //         0,
+    //         0
+    //       ],
+    //       id: String(Math.floor(Math.random() * 1000000000000000))
+    //     },
+    //     {
+    //       numPeople: 7,
+    //       name: "2nd Airbnb",
+    //       date: "2024-12-29",
+    //       startTime: "19:45",
+    //       endTime: "20:00",
+    //       // Below are in expanded details
+    //       cost: 70,
+    //       costSplitting: true,
+    //       type: "Hotel/Lodging",
+    //       people: [
+    //         "Person 1",
+    //         "Person 2",
+    //         "Person 3",
+    //         "Person 4",
+    //         "Person 5",
+    //         "Person 6",
+    //         "Person 7"
+    //       ],
+    //       paid: [
+    //         false,
+    //         false,
+    //         true,
+    //         false,
+    //         false,
+    //         false,
+    //         true
+    //       ],
+    //       payments: [
+    //         0,
+    //         0,
+    //         50,
+    //         0,
+    //         0,
+    //         0,
+    //         20
+    //       ],
+    //       id: String(Math.floor(Math.random() * 1000000000000000))
+    //     }
+    //   ],
+    //   "2024-12-29": [
+    //     {
+    //       numPeople: 7,
+    //       name: "Went to park and skated",
+    //       date: "2024-12-29",
+    //       startTime: "00:45",
+    //       endTime: "03:00",
+    //       // Below are in expanded details
+    //       cost: 70,
+    //       costSplitting: true,
+    //       type: "Activity",
+    //       people: [
+    //         "Person 1",
+    //         "Person 2",
+    //         "Person 3",
+    //         "Person 4",
+    //         "Person 5",
+    //         "Person 6",
+    //         "Person 7"
+    //       ],
+    //       paid: [
+    //         false,
+    //         false,
+    //         true,
+    //         false,
+    //         false,
+    //         false,
+    //         true
+    //       ],
+    //       payments: [
+    //         0,
+    //         0,
+    //         50,
+    //         0,
+    //         0,
+    //         0,
+    //         20
+    //       ],
+    //       id: String(Math.floor(Math.random() * 1000000000000000))
+    //     },
+    //     {
+    //       numPeople: 7,
+    //       name: "1st Airbnb",
+    //       date: "2024-12-29",
+    //       startTime: "05:45",
+    //       endTime: "07:00",
+    //       // Below are in expanded details
+    //       cost: 84,
+    //       costSplitting: true,
+    //       type: "Hotel/Lodging",
+    //       people: [
+    //         "Person 1",
+    //         "Person 2",
+    //         "Person 3",
+    //         "Person 4",
+    //         "Person 5",
+    //         "Person 6",
+    //         "Person 7"
+    //       ],
+    //       paid: [
+    //         true,
+    //         false,
+    //         true,
+    //         false,
+    //         false,
+    //         false,
+    //         true
+    //       ],
+    //       payments: [
+    //         14,
+    //         0,
+    //         50,
+    //         0,
+    //         0,
+    //         0,
+    //         20
+    //       ],
+    //       id: String(Math.floor(Math.random() * 1000000000000000))
+    //     },
+    //     {
+    //       numPeople: 7,
+    //       name: "Breakfast",
+    //       date: "2024-12-29",
+    //       startTime: "08:45",
+    //       endTime: "10:00",
+    //       // Below are in expanded details
+    //       cost: 35,
+    //       costSplitting: true,
+    //       type: "Food",
+    //       people: [
+    //         "Person 1",
+    //         "Person 2",
+    //         "Person 3",
+    //         "Person 4",
+    //         "Person 5",
+    //         "Person 6",
+    //         "Person 7"
+    //       ],
+    //       paid: [
+    //         false,
+    //         false,
+    //         false,
+    //         false,
+    //         false,
+    //         true,
+    //         false
+    //       ],
+    //       payments: [
+    //         0,
+    //         0,
+    //         0,
+    //         0,
+    //         0,
+    //         35,
+    //         0
+    //       ],
+    //       id: String(Math.floor(Math.random() * 1000000000000000))
+    //     },
+    //     {
+    //       numPeople: 7,
+    //       name: "Uber to universal",
+    //       date: "2024-12-29",
+    //       startTime: "10:30",
+    //       endTime: "11:00",
+    //       // Below are in expanded details
+    //       cost: 35,
+    //       costSplitting: true,
+    //       type: "Transportation",
+    //       people: [
+    //         "Person 1",
+    //         "Person 2",
+    //         "Person 3",
+    //         "Person 4",
+    //         "Person 5",
+    //         "Person 6",
+    //         "Person 7"
+    //       ],
+    //       paid: [
+    //         false,
+    //         true,
+    //         true,
+    //         false,
+    //         false,
+    //         false,
+    //         true
+    //       ],
+    //       payments: [
+    //         0,
+    //         5,
+    //         10,
+    //         0,
+    //         0,
+    //         0,
+    //         20
+    //       ],
+    //       id: String(Math.floor(Math.random() * 1000000000000000))
+    //     }
+    //   ]
+    // };
   }
 }
 
