@@ -1,24 +1,26 @@
 import {trips, renameTrip, changeDate} from "./data/trips.js";
-import {dayList, addEvent, removeEvent, saveDayList, getDebts} from "./data/events.js";
+import {getDayList, addEvent, removeEvent, getDebts} from "./data/events.js";
 import {renderDetailsTab} from "./tabs/details-tab.js";
 import {renderExpensesTab, renderDebts} from "./tabs/expenses-tab.js";
 
 renderTripDetails(true);
 
 function renderTripDetails(isDetails) {
-  console.log(dayList);
 
   const url = new URL(window.location.href);
-  const id = url.searchParams.get("id");
+  const tripId = url.searchParams.get("id");
   let thisTrip;
   let tripIndex = 0;
 
   for (; tripIndex < trips.length; tripIndex++) {
-    if (trips[tripIndex].id === id) {
+    if (trips[tripIndex].id === tripId) {
       thisTrip = trips[tripIndex];
       break;
     }
   }
+
+  const dayList = getDayList(tripId);
+  console.log(dayList);
 
   renderBasicTripDetails(thisTrip);
 
@@ -30,7 +32,7 @@ function renderTripDetails(isDetails) {
     })
 
     document.querySelector(".add-event-button").addEventListener("click", () => {
-      renderAddEventPage1({}, "Add an");
+      renderAddEventPage1(tripId, {}, "Add an");
     });
   
     document.querySelector(".rename-trip-button").addEventListener("click", () => {
@@ -57,13 +59,13 @@ function renderTripDetails(isDetails) {
     document.querySelectorAll(".edit-event-button").forEach((button) => {
       button.addEventListener("click", () => {
         const event = dayList[button.dataset.dayKey][button.dataset.eventIndex];
-        renderAddEventPage1(event, "Edit");
+        renderAddEventPage1(tripId, event, "Edit");
       });
     })
   
     document.querySelectorAll(".remove-event-button").forEach((button) => {
       button.addEventListener("click", () => {
-        removeEvent(button.dataset.dayKey, button.dataset.eventId);
+        removeEvent(tripId, button.dataset.dayKey, button.dataset.eventId);
         renderTripDetails(true);
         
       })
@@ -71,7 +73,7 @@ function renderTripDetails(isDetails) {
   }
   else {
     renderExpensesTab(dayList);
-    renderDebts(getDebts());
+    renderDebts(getDebts(tripId));
 
     document.querySelector(".unselected-tab").addEventListener("click", () => {
       renderTripDetails(true);
@@ -95,7 +97,7 @@ function renderBasicTripDetails(thisTrip) {
   document.querySelector(".basic-trip-details").innerHTML = basicDetailsHTML;
 }
 
-function renderAddEventPage1(tempObj, type) {
+function renderAddEventPage1(tripId, tempObj, type) {
   let placeholder = "";
 
   if (Object.keys(tempObj).length !== 0) {
@@ -140,11 +142,15 @@ function renderAddEventPage1(tempObj, type) {
     document.querySelector(".overlay").remove();
     
     renderTripDetails(true);
-    renderAddEventPage2(tempObj, type);
+    renderAddEventPage2(tripId, tempObj, type);
   })
 }
 
-function renderAddEventPage2(tempObj, type) {
+function renderAddEventPage2(tripId, tempObj, type) {
+
+  if (type == "Edit") {
+    tempObj.oldDate = tempObj.date;
+  }
 
   let peopleGrid = "";
 
@@ -281,11 +287,11 @@ function renderAddEventPage2(tempObj, type) {
     document.querySelector(".overlay").remove();
 
     renderTripDetails(true);
-    renderAddEventPage3(tempObj, type);
+    renderAddEventPage3(tripId, tempObj, type);
   })
 }
 
-function renderAddEventPage3(tempObj, type) {
+function renderAddEventPage3(tripId, tempObj, type) {
   console.log(tempObj);
 
   let paymentsGrid = "";
@@ -389,10 +395,13 @@ function renderAddEventPage3(tempObj, type) {
   
       console.log(newObj);
   
-      addEvent(newObj);
+      addEvent(tripId, newObj);
     }
     else {
-      saveDayList();
+      removeEvent(tripId, tempObj.oldDate, tempObj.id);
+      delete tempObj.oldDate;
+
+      addEvent(tripId, tempObj);
     }
 
     document.querySelector(".overlay").remove();

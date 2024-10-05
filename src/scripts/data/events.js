@@ -1,12 +1,8 @@
-export let dayList;
-
-loadDayList();
-
-function loadDayList() {
-  dayList = JSON.parse(localStorage.getItem("dayList"));
+export function getDayList(tripId) {
+  let dayList = JSON.parse(localStorage.getItem(`dayList-${tripId}`));
 
   if (!dayList) {
-    dayList = {}
+    dayList = {};
     // dayList = {
     //   "2025-01-02": [
     //     {
@@ -316,14 +312,18 @@ function loadDayList() {
     //   ]
     // };
   }
+
+  return dayList;
 }
 
-export function saveDayList() {
-  localStorage.setItem("dayList", JSON.stringify(dayList));
+function saveDayList(tripId, dayList) {
+  localStorage.setItem(`dayList-${tripId}`, JSON.stringify(dayList));
 }
 
-export function addEvent(eventObj) {
+export function addEvent(tripId, eventObj) {
   const key = eventObj.date
+  const dayList = getDayList(tripId);
+
   if (dayList[key]) {
     dayList[key].push(eventObj);
   }
@@ -331,10 +331,13 @@ export function addEvent(eventObj) {
     dayList[key] = [eventObj]; 
   }
 
-  saveDayList();
+  saveDayList(tripId, dayList);
 }
 
-export function removeEvent(key, id) {
+export function removeEvent(tripId, key, id) {
+  const dayList = getDayList(tripId);
+
+  console.log(Object.keys(dayList), key);
   for (let i = 0; i < dayList[key].length; i++) {
     if (dayList[key][i].id === id) {
       dayList[key].splice(i, 1);
@@ -346,12 +349,13 @@ export function removeEvent(key, id) {
     delete dayList[key];
   }
 
-  saveDayList();
+  saveDayList(tripId, dayList);
 
   console.log(dayList);
 }
 
-export function getDebts() {
+export function getDebts(tripId) {
+  const dayList = getDayList(tripId);
   const debts = {}
 
   Object.keys(dayList).sort((a, b) => {
