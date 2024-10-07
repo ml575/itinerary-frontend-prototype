@@ -1,6 +1,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 export function renderExpensesTab(dayList) {
+  console.log(dayList);
   const baseHTML = `
   <div class="page-title-grid">
     <div class="page-title unselected-tab">
@@ -154,7 +155,8 @@ export function renderExpensesTab(dayList) {
   });
 
   const largestType = Math.max(...expensesByType.map(item => item.cost));
-
+  console.log(expensesByType);
+  console.log(expensesByDay);
   drawExpensesPlot(expensesByType, ".expenses-by-type", largestType + 20, false);
   drawExpensesPlot(expensesByDay, ".expenses-by-day", largestDaily + 20, true);
 

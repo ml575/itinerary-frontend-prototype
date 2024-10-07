@@ -398,6 +398,8 @@ function renderAddEventPage3(tripId, tempObj, type) {
       addEvent(tripId, newObj);
     }
     else {
+      tempObj.cost = Number(tempObj.cost);
+
       removeEvent(tripId, tempObj.oldDate, tempObj.id);
       delete tempObj.oldDate;
 

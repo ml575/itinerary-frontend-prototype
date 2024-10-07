@@ -326,6 +326,15 @@ export function addEvent(tripId, eventObj) {
 
   if (dayList[key]) {
     dayList[key].push(eventObj);
+    dayList[key].sort((a, b) => {
+      if (a.endTime < b.endTime) {
+        return -1;
+      }
+      if (a.endTime > b.endTime) {
+        return 1;
+      }
+        return 0;
+    });
   }
   else {
     dayList[key] = [eventObj]; 
