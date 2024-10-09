@@ -1,6 +1,6 @@
 ## TripGenius Travel Organizer
 
-#### TripGenius is a web application designed to help users by simplifying the logistic and budgetary chaos that often comes with organizing trips. In particular, I developed the application with expense-tracking and cost-splitting functionalities in mind.
+#### TripGenius is a web application designed to help users by simplifying the logistic and budgetary chaos that often comes with organizing trips. In particular, I developed the application with expense-tracking and cost-splitting functionalities in mind. (For security reasons, I'm only able to post this prototype frontend in this public repo)
 
 <img width="1280" alt="Screenshot 2024-10-05 at 1 18 54 AM" src="https://github.com/user-attachments/assets/09da43f0-57aa-43c8-bf8c-209ba0034577">
 
