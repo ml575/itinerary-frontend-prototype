@@ -179,6 +179,7 @@ function renderAddEventPage2(tripId, tempObj, type) {
   let placeholderEndTime = "";
   let placeholderCost = "";
   let placeholderCostSplitting = "";
+  let placeholderType = "";
 
   if (Object.keys(tempObj).length !== 1) {
     placeholderName = tempObj.name;
@@ -187,6 +188,7 @@ function renderAddEventPage2(tripId, tempObj, type) {
     placeholderEndTime = tempObj.endTime;
     placeholderCost = tempObj.cost;
     placeholderCostSplitting = (tempObj.costSplitting) ? ("checked") : ("");
+    placeholderType = tempObj.type;
   }
   console.log(placeholderCostSplitting);
 
@@ -228,11 +230,11 @@ function renderAddEventPage2(tripId, tempObj, type) {
               What type of event is it?
             </div>
             <select name="trip-type" class="overlay-input-select js-input-event-type">
-              <option value="">Select option...</option>
-              <option value="Activity">Activity</option>
-              <option value="Food">Food</option>
-              <option value="Transportation">Transportation</option>
-              <option value="Hotel/Lodging">Hotel/Lodging</option>
+              <option value="" ${(placeholderType == "") ? "selected" : ""}>Select option...</option>
+              <option value="Activity" ${(placeholderType == "Activity") ? "selected" : ""}>Activity</option>
+              <option value="Food" ${(placeholderType == "Food") ? "selected" : ""}>Food</option>
+              <option value="Transportation" ${(placeholderType == "Transportation") ? "selected" : ""}>Transportation</option>
+              <option value="Hotel/Lodging" ${(placeholderType == "Hotel/Lodging") ? "selected" : ""}>Hotel/Lodging</option>
             </select>
           </div>
         </div>
